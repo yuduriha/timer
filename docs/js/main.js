@@ -3,6 +3,7 @@ window.onload = function () {
     calcTime();
     window.setInterval(function () {
         calcTime();
+        calcStamina();
     }, 500);
 };
 function calcTime() {
@@ -18,4 +19,13 @@ function replaceDate(date) {
         ('0' + date.getDate()).slice(-2) + "日 " +
         ('0' + date.getHours()).slice(-2) + ":" +
         ('0' + date.getMinutes()).slice(-2);
+}
+function calcStamina() {
+    var hour = Number(document.getElementById("hour").value);
+    var minute = Number(document.getElementById("minute").value);
+    var maxStamina = Number(document.getElementById("max_stamina").value);
+    var parMinute = Number(document.getElementById("par_minute").value);
+    var rest = hour * 60 + minute;
+    var recovery = Math.floor(rest / parMinute);
+    document.getElementById("result2").innerHTML = '' + (maxStamina - recovery);
 }

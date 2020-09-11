@@ -6,16 +6,24 @@
 		<script type="text/javascript" src="./js/main.js"></script>
 		<title>もしかして2桁の計算ができるルン！？</title>
 	</head>
-		<!--ルン！-->
 		<div id="timer">
+			<div id="input_area">
+				最大スタミナ
+				<input type="number" id="max_stamina" value="127" min="0" onInput="calcStamina()">
+				, 毎分
+				<input type="number" id="par_minute" value="4" min="0"onInput="calcStamina()">
+				回復
+			</div>
 			<div id="input_area">
 				今から
 				<input type="number" id="hour" value="1" min="0" onInput="calcTime()">
 				時間
 				<input type="number" id="minute" value="0" min="0" max="59" onInput="calcTime()">
-				分後は
+				分後の
 			</div>
-			<div id="result">あああ</div>
+			<div class="result" id="result">あああ</div>
+			にスタミナMAXにするには残り<br>
+			<div class="result" id="result2">あああ</div><br>
 		</div>
 	<body>
 	</body>
